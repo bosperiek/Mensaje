@@ -1,20 +1,7 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
 const SVG_XLINK = "http://www.w3.org/1999/xlink";
-let rid = null;
-let gon = 7;
-
-
-const colors = [
-  "#ffd700", // Amarillo dorado
-  "#ffec00", // Amarillo brillante
-  "#f3d250", // Amarillo suave
-  "#f7dfb9"  // Amarillo pastel
-];
-
-let m = { x: 0, y: 0 };
-let previous = { x: 0, y: 0 };
-let scale = 1;
-let bool = false;
+const colors = ["#FFD700", "#FFA500", "#FF6347", "#FFFF00", "#FF00FF"];
+const gon = 6;
 
 class Flower {
   constructor(n, pos, scale, parent) {
@@ -61,103 +48,6 @@ class Flower {
   }
 }
 
-
-// svg.addEventListener("mousedown", e => {
-//   // clear the canvas
-//   while (svg.lastChild) {
-//     svg.removeChild(svg.lastChild);
-//   }
-//   // if bool == true I can draw
-//   bool = true;
-// });
-
-// svg.addEventListener("mouseup", e => {
-//   bool = false;
-//   previous = {};
-// });
-
-// svg.addEventListener("mousemove", e => {
-//   if (bool) {
-//     m = oMousePosSVG(e);
-//     // number of petals
-//     let n = 2 + ~~(Math.random() * 4);
-//     // set the scale
-//     if (previous.x) {
-//       let d = dist(m, previous);
-//       scale = d / 30;
-//     } else {
-//       scale = 1;
-//     }
-
-
-// ... código anterior ...
-
-function init() {
-  svg = document.getElementById("svg");
-
-  svg.addEventListener("mousedown", e => {
-    // clear the canvas
-    while (svg.lastChild) {
-      svg.removeChild(svg.lastChild);
-    }
-    // if bool == true I can draw
-    bool = true;
-  });
-
-  svg.addEventListener("mouseup", e => {
-    bool = false;
-    previous = {};
-  });
-
-  svg.addEventListener("mousemove", e => {
-    if (bool) {
-      m = oMousePosSVG(e);
-      // number of petals
-      let n = 2 + ~~(Math.random() * 4);
-      // set the scale
-      if (previous.x) {
-        let d = dist(m, previous);
-        scale = d / 30;
-      } else {
-        scale = 1;
-      }
-
-      let flower = new Flower(n, { x: m.x, y: m.y }, scale, svg);
-      setTimeout(() => {
-        flower.G.setAttribute("class", `_${flower.n}`);
-      }, 50);
-
-      previous.x = m.x;
-      previous.y = m.y;
-    } //if bool
-  });
-
-  svg.addEventListener("touchstart", e => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    simulateMouseEvent("mousedown", touch.clientX, touch.clientY);
-  });
-
-  svg.addEventListener("touchmove", e => {
-    e.preventDefault();
-    const touch = e.touches[0];
-    simulateMouseEvent("mousemove", touch.clientX, touch.clientY);
-  });
-
-  function simulateMouseEvent(type, clientX, clientY) {
-    const event = new MouseEvent(type, {
-      bubbles: true,
-      cancelable: true,
-      view: window,
-      clientX: clientX,
-      clientY: clientY
-    });
-    svg.dispatchEvent(event);
-  }
-}
-
-// ... código posterior ...
-
 function oMousePosSVG(e) {
   var p = svg.createSVGPoint();
   p.x = e.clientX;
@@ -172,8 +62,6 @@ function dist(p1, p2) {
   let dy = p2.y - p1.y;
   return Math.sqrt(dx * dx + dy * dy);
 }
-
-
 
 function algorithmPoly(gon, R) {
   let points = [];
@@ -192,7 +80,6 @@ function algorithmPoly(gon, R) {
 
 let points = algorithmPoly(gon, 2500);
 
-
 let frames = 0;
 function Frame() {
   rid = window.requestAnimationFrame(Frame);
@@ -210,7 +97,7 @@ function Frame() {
     flower.G.setAttribute("class", `_${flower.n}`);
   }, 50);
 
-  frames++
+  frames++;
 }
 
 Frame();
