@@ -7,7 +7,11 @@ const colors = [
   "#ffd700", // Amarillo dorado
   "#ffec00", // Amarillo brillante
   "#f3d250", // Amarillo suave
-  "#f7dfb9"  // Amarillo pastel
+  "#f7dfb9", // Amarillo pastel
+  "#ffdb58", // Amarillo mustardo
+  "#ffdf00", // Amarillo limón
+  "#f4e04d", // Amarillo pálido
+  "#ffef96"  // Amarillo claro
 ];
 
 
@@ -154,4 +158,3 @@ function Frame() {
 }
 
 Frame();
-
