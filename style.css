@@ -40,7 +40,7 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   text-align: center;
   color: rgb(14, 0, 144); /* Color del texto */
@@ -51,7 +51,7 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
   top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 20px;
+  font-size: 23px;
   font-weight: bold;
   text-align: center;
   color: rgb(14, 0, 144); /* Color del texto */
@@ -71,20 +71,20 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
 /* Mobile devices (portrait) */
 @media only screen and (max-width: 480px) {
   #texto1, #texto2 {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 
 /* Tablets (iPad) */
 @media only screen and (min-width: 768px) {
   #texto1, #texto2 {
-    font-size: 26px;
+    font-size: 32px;
   }
 }
 
 /* Desktop devices (laptop) */
 @media only screen and (min-width: 1024px) {
   #texto1, #texto2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
