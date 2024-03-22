@@ -3,13 +3,13 @@ const SVG_XLINK = "http://www.w3.org/1999/xlink";
 let rid = null;
 let gon = 7;
 
-
 const colors = [
   "#ffd700", // Amarillo dorado
   "#ffec00", // Amarillo brillante
   "#f3d250", // Amarillo suave
   "#f7dfb9"  // Amarillo pastel
 ];
+
 
 let m = { x: 0, y: 0 };
 let previous = { x: 0, y: 0 };
@@ -133,7 +133,6 @@ function algorithmPoly(gon, R) {
 
 let points = algorithmPoly(gon, 2500);
 
-
 let frames = 0;
 function Frame() {
   rid = window.requestAnimationFrame(Frame);
@@ -151,7 +150,8 @@ function Frame() {
     flower.G.setAttribute("class", `_${flower.n}`);
   }, 50);
 
-  frames++
+  frames++;
 }
 
 Frame();
+

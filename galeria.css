@@ -87,4 +87,114 @@ h1 {
   padding: 20px; /* Agregar espacio interior para mejorar la apariencia */
 }
 
-/* Responsividad */
+#instructions {
+  background: linear-gradient(45deg, #fff4e3, #f9e087, #fadc6c, #f7ec39, #ffffff); 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}
+
+#instructions h2 {
+  color: #333;
+  font-size: 20px;
+}
+
+#instructions p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#instructions.hidden {
+  display: none;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Tarjetas ocupan todo el ancho */
+    margin-bottom: 10px; /* Espacio inferior reducido */
+  }
+
+  .message-card {
+    margin-top: 10px; /* Espacio superior reducido */
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+  }
+
+  #button-container {
+    bottom: 20px; /* Posición del botón ajustada */
+  }
+
+  #instructions {
+    padding: 10px; /* Espacio interior reducido */
+    margin: 10px;
+  }
+
+  #instructions h2 {
+    font-size: 18px; /* Tamaño de fuente del encabezado reducido */
+  }
+
+  #instructions p {
+    font-size: 14px; /* Tamaño de fuente del párrafo reducido */
+    margin-bottom: 5px; /* Espacio inferior reducido */
+  }
+}
+
+/* Estilos para tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    width: 45%; /* Ancho de la tarjeta ajustado */
+    margin-bottom: 15px; /* Espacio inferior ligeramente reducido */
+  }
+
+  .message-card {
+    margin-top: 15px; /* Espacio superior ligeramente reducido */
+  }
+
+  #button-container {
+    bottom: 50px; /* Posición del botón ajustada */
+  }
+
+  #instructions {
+    padding: 15px; /* Espacio interior ajustado */
+    margin: 15px;
+  }
+
+  #instructions h2 {
+    font-size: 20px; /* Tamaño de fuente del encabezado ajustado */
+  }
+
+  #instructions p {
+    font-size: 16px; /* Tamaño de fuente del párrafo ajustado */
+  }
+}
+
+/* Estilos para dispositivos de escritorio */
+@media (min-width: 1025px) {
+  .card {
+    width: 320px; /* Ancho de la tarjeta original */
+    margin-bottom: 20px; /* Espacio inferior normal */
+  }
+
+  .message-card {
+    margin-top: 20px; /* Espacio superior normal */
+  }
+
+  #button-container {
+    bottom: 70px; /* Posición del botón original */
+  }
+
+  #instructions {
+    padding: 20px; /* Espacio interior original */
+    margin: 20px;
+  }
+
+  #instructions h2 {
+    font-size: 20px; /* Tamaño de fuente del encabezado original */
+  }
+
+  #instructions p {
+    font-size: 16px; /* Tamaño de fuente del párrafo original */
+    margin-bottom: 10px; /* Espacio inferior normal */
+  }
+}
