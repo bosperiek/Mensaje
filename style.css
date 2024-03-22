@@ -46,6 +46,17 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
   color: rgb(14, 0, 144); /* Color del texto */
 }
 
+#texto1 {
+  position: fixed;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(14, 0, 144); /* Color del texto */
+}
+
 #texto2 {
   position: fixed;
   top: 55%;
@@ -57,8 +68,7 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
   color: rgba(5, 65, 118, 0.532); /* Color del texto */
 }
 
-
-/* Dispositivos de teléfonos (samsung galaxy s8) */
+/* Mobile devices (portrait) */
 @media only screen and (max-width: 480px) {
   #texto1, #texto2 {
     font-size: 16px;
@@ -72,7 +82,7 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
   }
 }
 
-/* Dispositivos de escritorio (computadora de escritorio) */
+/* Desktop devices (laptop) */
 @media only screen and (min-width: 1024px) {
   #texto1, #texto2 {
     font-size: 28px;
