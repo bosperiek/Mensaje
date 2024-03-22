@@ -70,21 +70,36 @@ svg .a g:nth-of-type(2) use:nth-of-type(5){transform:rotate(calc(4deg * 180 / va
 
 /* Mobile devices (portrait) */
 @media only screen and (max-width: 480px) {
-  #texto1, #texto2 {
+  #texto1 {
     font-size: 24px;
+    top: 40%; /* Ajuste de posición para dispositivos móviles */
+  }
+  
+  #texto2 {
+    font-size: 22px; /* Se mantiene igual para dispositivos móviles */
   }
 }
 
 /* Tablets (iPad) */
 @media only screen and (min-width: 768px) {
-  #texto1, #texto2 {
+  #texto1 {
     font-size: 32px;
+    top: 45%; /* Ajuste de posición para tablets */
+  }
+  
+  #texto2 {
+    font-size: 28px; /* Ajuste de tamaño para tablets */
   }
 }
 
 /* Desktop devices (laptop) */
 @media only screen and (min-width: 1024px) {
-  #texto1, #texto2 {
+  #texto1 {
     font-size: 36px;
+    top: 42%; /* Ajuste de posición para dispositivos de escritorio */
+  }
+  
+  #texto2 {
+    font-size: 32px; /* Ajuste de tamaño para dispositivos de escritorio */
   }
 }
