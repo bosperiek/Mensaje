@@ -62,42 +62,101 @@ class Flower {
 }
 
 
-svg.addEventListener("mousedown", e => {
-  // clear the canvas
-  while (svg.lastChild) {
-    svg.removeChild(svg.lastChild);
-  }
-  // if bool == true I can draw
-  bool = true;
-});
+// svg.addEventListener("mousedown", e => {
+//   // clear the canvas
+//   while (svg.lastChild) {
+//     svg.removeChild(svg.lastChild);
+//   }
+//   // if bool == true I can draw
+//   bool = true;
+// });
 
-svg.addEventListener("mouseup", e => {
-  bool = false;
-  previous = {};
-});
+// svg.addEventListener("mouseup", e => {
+//   bool = false;
+//   previous = {};
+// });
 
-svg.addEventListener("mousemove", e => {
-  if (bool) {
-    m = oMousePosSVG(e);
-    // number of petals
-    let n = 2 + ~~(Math.random() * 4);
-    // set the scale
-    if (previous.x) {
-      let d = dist(m, previous);
-      scale = d / 30;
-    } else {
-      scale = 1;
+// svg.addEventListener("mousemove", e => {
+//   if (bool) {
+//     m = oMousePosSVG(e);
+//     // number of petals
+//     let n = 2 + ~~(Math.random() * 4);
+//     // set the scale
+//     if (previous.x) {
+//       let d = dist(m, previous);
+//       scale = d / 30;
+//     } else {
+//       scale = 1;
+//     }
+
+
+// ... código anterior ...
+
+function init() {
+  svg = document.getElementById("svg");
+
+  svg.addEventListener("mousedown", e => {
+    // clear the canvas
+    while (svg.lastChild) {
+      svg.removeChild(svg.lastChild);
     }
+    // if bool == true I can draw
+    bool = true;
+  });
 
-    let flower = new Flower(n, { x: m.x, y: m.y }, scale, svg);
-    setTimeout(() => {
-      flower.G.setAttribute("class", `_${flower.n}`);
-    }, 50);
+  svg.addEventListener("mouseup", e => {
+    bool = false;
+    previous = {};
+  });
 
-    previous.x = m.x;
-    previous.y = m.y;
-  } //if bool
-});
+  svg.addEventListener("mousemove", e => {
+    if (bool) {
+      m = oMousePosSVG(e);
+      // number of petals
+      let n = 2 + ~~(Math.random() * 4);
+      // set the scale
+      if (previous.x) {
+        let d = dist(m, previous);
+        scale = d / 30;
+      } else {
+        scale = 1;
+      }
+
+      let flower = new Flower(n, { x: m.x, y: m.y }, scale, svg);
+      setTimeout(() => {
+        flower.G.setAttribute("class", `_${flower.n}`);
+      }, 50);
+
+      previous.x = m.x;
+      previous.y = m.y;
+    } //if bool
+  });
+
+  svg.addEventListener("touchstart", e => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    simulateMouseEvent("mousedown", touch.clientX, touch.clientY);
+  });
+
+  svg.addEventListener("touchmove", e => {
+    e.preventDefault();
+    const touch = e.touches[0];
+    simulateMouseEvent("mousemove", touch.clientX, touch.clientY);
+  });
+
+  function simulateMouseEvent(type, clientX, clientY) {
+    const event = new MouseEvent(type, {
+      bubbles: true,
+      cancelable: true,
+      view: window,
+      clientX: clientX,
+      clientY: clientY
+    });
+    svg.dispatchEvent(event);
+  }
+}
+
+// ... código posterior ...
 
 function oMousePosSVG(e) {
   var p = svg.createSVGPoint();
