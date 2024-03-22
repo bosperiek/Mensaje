@@ -97,6 +97,9 @@ h1 {
 #instructions h2 {
   color: #333;
   font-size: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
 }
 
 #instructions p {
